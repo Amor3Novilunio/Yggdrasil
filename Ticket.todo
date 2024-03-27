@@ -2,67 +2,242 @@
   "todotree": {
     "tree": [
       {
-        "key": 1711222261097,
+        "key": 1711488445303,
         "children": [
           {
-            "key": 1711222340329,
+            "key": 1711488505695,
+            "children": [],
+            "todo": {
+              "content": "Navbar",
+              "id": 1711488505695,
+              "level": "default",
+              "done": false,
+              "start": 1711488505695
+            }
+          },
+          {
+            "key": 1711488516523,
+            "children": [],
+            "todo": {
+              "content": "Routing",
+              "id": 1711488516523,
+              "level": "default",
+              "done": false,
+              "start": 1711488516523
+            }
+          },
+          {
+            "key": 1711488530922,
+            "children": [],
+            "todo": {
+              "content": "Axios",
+              "id": 1711488530922,
+              "level": "default",
+              "done": false,
+              "start": 1711488530923
+            }
+          },
+          {
+            "key": 1711552216622,
             "children": [
               {
-                "key": 1711222356877,
-                "children": [],
+                "key": 1711552223555,
+                "children": [
+                  {
+                    "key": 1711552266299,
+                    "children": [],
+                    "todo": {
+                      "content": "Tabs",
+                      "id": 1711552266299,
+                      "level": "default",
+                      "done": false,
+                      "start": 1711552266299
+                    }
+                  },
+                  {
+                    "key": 1711552252795,
+                    "children": [],
+                    "todo": {
+                      "content": "Notification",
+                      "id": 1711552252795,
+                      "level": "default",
+                      "done": false,
+                      "start": 1711552252795
+                    }
+                  },
+                  {
+                    "key": 1711552241137,
+                    "children": [],
+                    "todo": {
+                      "content": "Graph",
+                      "id": 1711552241137,
+                      "level": "default",
+                      "done": false,
+                      "start": 1711552241137
+                    }
+                  },
+                  {
+                    "key": 1711552309294,
+                    "children": [],
+                    "todo": {
+                      "content": "Search",
+                      "id": 1711552309294,
+                      "level": "default",
+                      "done": false,
+                      "start": 1711552309294
+                    }
+                  },
+                  {
+                    "key": 1711552352774,
+                    "children": [],
+                    "todo": {
+                      "content": "Boards",
+                      "id": 1711552352774,
+                      "level": "default",
+                      "done": false,
+                      "start": 1711552352774
+                    }
+                  },
+                  {
+                    "key": 1711552362735,
+                    "children": [],
+                    "todo": {
+                      "content": "Create New Boards",
+                      "id": 1711552362735,
+                      "level": "default",
+                      "done": false,
+                      "start": 1711552362735
+                    }
+                  }
+                ],
                 "todo": {
-                  "content": "React",
-                  "id": 1711222356877,
+                  "content": "UI",
+                  "id": 1711552223555,
                   "level": "default",
                   "done": false,
-                  "start": 1711222356877
+                  "start": 1711552223555
                 }
               }
             ],
             "todo": {
-              "content": "FolderStructure",
-              "id": 1711222340329,
-              "level": "danger",
+              "content": "KanbanBoards",
+              "id": 1711552216622,
+              "level": "default",
               "done": false,
-              "start": 1711222340330
+              "start": 1711552216622
             }
           }
         ],
         "todo": {
-          "content": "T01",
-          "id": 1711222261097,
-          "level": "danger",
+          "content": "Client",
+          "id": 1711488445303,
+          "level": "warning",
           "done": false,
-          "start": 1711222261097
+          "start": 1711488445303
         }
       },
       {
-        "key": 1711450173477,
-        "children": [],
+        "key": 1711488464614,
+        "children": [
+          {
+            "key": 1711552388669,
+            "children": [
+              {
+                "key": 1711552395840,
+                "children": [],
+                "todo": {
+                  "content": "localhost:3000",
+                  "id": 1711552395840,
+                  "level": "default",
+                  "done": false,
+                  "start": 1711552395840
+                }
+              },
+              {
+                "key": 1711552406138,
+                "children": [],
+                "todo": {
+                  "content": "127.0.1",
+                  "id": 1711552406138,
+                  "level": "default",
+                  "done": false,
+                  "start": 1711552406138
+                }
+              }
+            ],
+            "todo": {
+              "content": "Cors",
+              "id": 1711552388669,
+              "level": "default",
+              "done": false,
+              "start": 1711552388669
+            }
+          },
+          {
+            "key": 1711552414920,
+            "children": [],
+            "todo": {
+              "content": "Mediatr",
+              "id": 1711552414920,
+              "level": "default",
+              "done": false,
+              "start": 1711552414920
+            }
+          },
+          {
+            "key": 1711552418835,
+            "children": [
+              {
+                "key": 1711552462369,
+                "children": [],
+                "todo": {
+                  "content": "Kanban Table",
+                  "id": 1711552462369,
+                  "level": "default",
+                  "done": false,
+                  "start": 1711552462369
+                }
+              }
+            ],
+            "todo": {
+              "content": "DbContext",
+              "id": 1711552418835,
+              "level": "default",
+              "done": false,
+              "start": 1711552418835
+            }
+          },
+          {
+            "key": 1711552425540,
+            "children": [],
+            "todo": {
+              "content": "Kanban Rest API",
+              "id": 1711552425540,
+              "level": "default",
+              "done": false,
+              "start": 1711552425540
+            }
+          }
+        ],
         "todo": {
-          "content": "add generator code to client",
-          "id": 1711450173477,
-          "level": "default",
+          "content": "Server",
+          "id": 1711488464614,
+          "level": "warning",
           "done": false,
-          "start": 1711450173477
-        }
-      },
-      {
-        "key": 1711450190088,
-        "children": [],
-        "todo": {
-          "content": "tailwind ???",
-          "id": 1711450190088,
-          "level": "default",
-          "done": false,
-          "start": 1711450190088
+          "start": 1711488464614
         }
       }
     ],
     "expandKeys": [
       1711222356877,
-      1711222261097,
-      1711222340329
+      1711222340329,
+      1711488445303,
+      1711552216622,
+      1711552241137,
+      1711552223555,
+      1711552309294,
+      1711488464614,
+      1711552425540
     ],
     "schema": "https://github.com/Saber2pr/vsc-ext-todolist/blob/master/src/api/type.ts#L3",
     "add_mode": "bottom",
@@ -75,6 +250,6 @@
     "showEndTime": false,
     "simpleMode": false,
     "lang": "en",
-    "version": "1711450199973"
+    "version": "1711552490560"
   }
 }

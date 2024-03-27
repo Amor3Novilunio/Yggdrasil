@@ -1,0 +1,39 @@
+{
+  "title": "Kanban",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "userId": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "Board": {
+      "title": "Board",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "status": {
+          "type": "boolean"
+        }
+      }
+    },
+    "created_By": {
+      "type": "string"
+    },
+    "date_Created": {
+      "type": "any"
+    },
+    "date_Modified": {
+      "type": "any"
+    }
+  }
+}
