@@ -9,6 +9,7 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
+    "install_client": "npm i && npm run generate_install",
     "generate_install": "cd Generator && npm i",
     "generate": "cd Generator && npm run generate"
   },
