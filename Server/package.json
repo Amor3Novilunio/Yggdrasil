@@ -7,6 +7,7 @@
     "start_watch": "dotnet run watch  --project api",
     "start_dev": "dotnet run environment=development --project api",
     "start_dev_watch": "dotnet run watch environment=development --project api",
+    "install_server": "cd scripts && bash init_dotnet8.bash",
     "install_Ef": "cd scripts && bash dotnet_EF_Install.bash",
     "update_db": "dotnet ef database update -s api -p persistence",
     "add_migration": "cd scripts && bash add_migrations.bash",
