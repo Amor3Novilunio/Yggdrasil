@@ -1,0 +1,31 @@
+{
+  "title": "Todo_Task",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "list_Id": {
+      "type": "string"
+    },
+    "task_Name": {
+      "type": "string"
+    },
+    "task_Description": {
+      "type": "string"
+    },
+    "due_Date": {
+      "type": "string"
+    },
+    "created_By": {
+      "type": "string"
+    },
+    "date_Created": {
+      "type": "any"
+    },
+    "date_Modified": {
+      "type": "any"
+    }
+  },
+  "required": ["list_Id", "task_Name", "due_Date"]
+}

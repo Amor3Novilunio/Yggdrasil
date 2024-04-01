@@ -1,0 +1,48 @@
+#enableDarkMode {
+  transition: all ease-in;
+  animation: enableDarkMode 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+#disableDarkMode {
+  transition: all ease-in;
+  animation: disableDarkMode 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes enableDarkMode {
+  0% {
+    left: 0%;
+    right: 0%;
+  }
+  100% {
+    left: 58%;
+    right: 0%;
+  }
+}
+
+@keyframes disableDarkMode {
+  0% {
+    left: 0%;
+    right: 0%;
+  }
+  100% {
+    right: 58%;
+    left: 0%;
+  }
+}
+/* 
+.darkmodeEnable{
+  background-image: url("../../../public/moon.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+}
+
+.darkmodeDisable{
+  background-image: url("../../../public/sun.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+} */

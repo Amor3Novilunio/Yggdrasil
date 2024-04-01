@@ -3,6 +3,8 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
+    "install_client": "cd Client && npm i && cd Generator && npm i",
+    "start": "cd Client && npm start"
   },
   "author": "Amor III Novilunio"
 }

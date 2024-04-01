@@ -1,0 +1,22 @@
+{
+  "title": "Todo_List",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "List_Title": {
+      "type": "string"
+    },
+    "created_By": {
+      "type": "string"
+    },
+    "date_Created": {
+      "type": "any"
+    },
+    "date_Modified": {
+      "type": "any"
+    }
+  },
+  "required": ["List_Title"]
+}
