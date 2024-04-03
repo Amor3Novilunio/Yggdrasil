@@ -8,6 +8,7 @@ namespace Application.Core
         public MappingProfiles()
         {
             CreateMap<Todo_List, Todo_List>();
+            CreateMap<Todo_Task, Todo_Task>();
         }
     }
 }

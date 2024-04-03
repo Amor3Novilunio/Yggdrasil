@@ -1,12 +1,11 @@
+using Domain.Model.Todolist;
 using MediatR;
 using Persistence;
 
-namespace Application.Todolist.List;
+namespace Application.Todolist.Tasks;
+public class Delete(){
 
-public class Delete
-{
-    public class Command : IRequest
-    {
+    public class Command : IRequest{
         public required Guid Id { get; set; }
     }
 
@@ -17,12 +16,12 @@ public class Delete
 
         public async Task Handle(Command request, CancellationToken cancellationToken)
         {
-            var list = await _db.Todolists.FindAsync(request.Id);
-            if (list is not null)
-            {
-                _db.Todolists.Remove(list);
+            var result = await _db.Todolist_Tasks.FindAsync(request.Id);
+            if(result is not null){
+                _db.Todolist_Tasks.Remove(result);
                 await _db.SaveChangesAsync();
             }
         }
+
     }
 }

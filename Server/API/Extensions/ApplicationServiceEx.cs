@@ -1,7 +1,7 @@
-using Application.Todolist.List;
 using Application.Core;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
+using Application;
 
 namespace Extensions;
 
@@ -14,7 +14,9 @@ public static class ApplicationServiceEx
         services.AddSwaggerGen();
 
         services.AddDbContext<DataContext>(opt => opt.UseSqlite(config.GetConnectionString("DefaultConnection")));
-        services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(Read.Query).Assembly));
+        services.AddMediatR(config => {
+            config.RegisterServicesFromAssembly(typeof(Application_Index).Assembly);
+        });
         services.AddAutoMapper(typeof(MappingProfiles).Assembly);
 
         services.AddCors(opt=>{
