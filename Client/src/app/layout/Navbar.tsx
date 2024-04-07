@@ -1,4 +1,5 @@
 import "./Navbar.css";
+import NavItem from "./components/NavItem";
 
 interface Props{
     darkMode:any,
@@ -16,12 +17,8 @@ const Navbar = ({ darkMode, mode }: Props) => {
           </div>
           {/* Mid */}
           <div className="flex flex-col space-y-2">
-            <button className="w-full hover:bg-slate-100 py-2 text-slate-800">
-              Home
-            </button>
-            <button className="w-full bg-slate-100 py-2 text-slate-800">
-              Todolist
-            </button>
+            <NavItem NavigationPath="/" NavigationName="Dashboard" />
+            <NavItem NavigationPath="/Todolist" NavigationName="Todolist" />
           </div>
 
           {/* Bot */}

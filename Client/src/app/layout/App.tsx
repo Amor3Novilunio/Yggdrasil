@@ -4,9 +4,10 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import './App.css'
 import Navbar from "./Navbar";
 import { useEffect, useState } from "react";
-import Routes from "../routes/Routes";
+import { Outlet } from "react-router-dom";
 
 function App() {
+  // REFACTOR DARKMODE
   const [darkmode, setDarkMode] = useState(false);
   useEffect(()=>{
     setDarkMode(localStorage.getItem("theme") === "dark");
@@ -26,7 +27,7 @@ function App() {
         </section>
         {/* Content */}
         <section className="h-screen overflow-auto" style={{ flexBasis: "90%" }}>
-          <Routes />
+          <Outlet />
         </section>
       </div>
     </>

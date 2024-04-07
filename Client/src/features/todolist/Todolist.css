@@ -12,19 +12,6 @@
   animation-fill-mode: forwards;
 }
 
-#AddNewTask {
-  display: block;
-  animation: slideRightToLeft 1s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-
-#CloseAddNewTask {
-  display: block;
-  animation: slideLeftToRight 1s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
 
 @keyframes leftToRightWipe {
   0% {
@@ -46,32 +33,6 @@
   }
   100% {
     transform: translateX(0px);
-  }
-}
-
-@keyframes slideRightToLeft {
-  0% {
-    transform: translateX(50px);
-    width: 0%;
-    opacity: 0;
-  }
-  100% {
-    width: 60%;
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideLeftToRight {
-  0% {
-    width: 50%;
-    transform: translateX(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(50px);
-    width: 0%;
-    opacity: 0;
   }
 }
 

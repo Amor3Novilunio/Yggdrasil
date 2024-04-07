@@ -1,20 +1,20 @@
 import { FaCheck, FaPlus } from "react-icons/fa";
 import { FaX } from "react-icons/fa6";
-import eventHandler from "../eventHandler/eventHandler";
+import AddToListEvent from "../events/AddToListEvents";
 
-const AddList = () => {
+export default function AddToList() {
 
   const {
-    listEvent,
-    ListValue,
+    showTextInput,
+    listValue,
     inputKeyUpHandler,
     closeInputHandler,
     OnChangeInput,
     onClickToInputHandler,
-    saveChanges
-  } = eventHandler.AddListEventHandler();
+    saveList,
+  } = AddToListEvent();
 
-  return !listEvent ? (
+  return !showTextInput ? (
     <>
       <div
         className="flex space-x-3 items-center ml-2 cursor-pointer"
@@ -31,13 +31,14 @@ const AddList = () => {
           autoFocus
           id="AddListBtn"
           type="text"
+          name="listName"
           placeholder="New List Name"
-          value={ListValue}
+          value={listValue}
           onChange={OnChangeInput}
           className="p-2 bg-slate-100 shadow-inner rounded w-full outline-none"
           onKeyUp={inputKeyUpHandler}
         />
-        <button className="p-2 shadow-lg rounded" onClick={saveChanges}>
+        <button className="p-2 shadow-lg rounded" onClick={saveList}>
           <FaCheck />
         </button>
         <button className="p-2 shadow-lg rounded" onClick={closeInputHandler}>
@@ -47,5 +48,3 @@ const AddList = () => {
     </>
   );
 };
-
-export default AddList;

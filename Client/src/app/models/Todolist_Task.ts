@@ -7,7 +7,7 @@
 
 export interface Todo_Task {
   id?: string;
-  list_Id: string;
+  list_ID: string;
   task_Name: string;
   task_Description?: string;
   due_Date: string;

@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import randomColor from "randomcolor";
 import {
   FaSearch,
   FaAngleDoubleRight,
@@ -7,21 +6,18 @@ import {
   FaStickyNote,
 } from "react-icons/fa";
 import { FaGaugeHigh, FaListCheck, FaSquare } from "react-icons/fa6";
-import NavigationItem from "./components/NavigationItem";
-import AddList from "../forms/AddList";
-import eventHandler from "../eventHandler/eventHandler";
-import { useStore } from "../../../app/stores/Store";
-import { observer } from "mobx-react-lite";
+import TodoMenuNavigationItem from "./components/TodoMenuNavigationItem";
 import { Todo_List } from "../../../app/models/Todolist_List";
-const Menu = () => {
-  const { todolistStore } = useStore();
+import TodoMenuEvent from "./events/TodoMenuEvent";
+import AddToList from "./forms/AddToList";
 
-  const { listHeight, listHeightChecker } = eventHandler.MenuEventHandler();
+interface Props{
+  list:Todo_List[],
+}
 
-  useEffect(() => {
-    listHeightChecker(todolistStore.listData);
-    todolistStore.getList();
-  }, [todolistStore]);
+const Menu = ({list}:Props) => {
+  // listHeightChecker
+  const { listHeight } = TodoMenuEvent({list});
 
   return (
     <div className="h-screen p-5 shadow-inner bg-white flex flex-col justify-between">
@@ -37,6 +33,7 @@ const Menu = () => {
           <FaSearch className="absolute " />
           <input
             type="text"
+            name="search"
             className="py-2 outline-none rounded pl-5 w-full "
             placeholder="Search..."
           />
@@ -44,37 +41,37 @@ const Menu = () => {
         {/* Task */}
         <hr className="my-2" />
         <div className="flex flex-col space-y-1 text-xs">
-          <NavigationItem
+          <TodoMenuNavigationItem
             name="Dashboard"
             icon={<FaGaugeHigh />}
-            count={0}
-            active={false}
+            count={null}
+            NavigationPath="/Dashboard"
           />
           <h1 className="font-semibold tracking-wide ">Tasks</h1>
           <div className="flex flex-col space-y-1">
-            <NavigationItem
+            <TodoMenuNavigationItem
               name="Today"
               icon={<FaListCheck />}
               count={0}
-              active={true}
+              NavigationPath="/Today"
             />
-            <NavigationItem
+            <TodoMenuNavigationItem
               name="Upcoming"
               icon={<FaAngleDoubleRight />}
               count={0}
-              active={false}
+              NavigationPath="/Upcoming"
             />
-            <NavigationItem
+            <TodoMenuNavigationItem
               name="Calendar"
               icon={<FaCalendar />}
               count={0}
-              active={false}
+              NavigationPath="/Calendar"
             />
-            <NavigationItem
+            <TodoMenuNavigationItem
               name="Sticky Wall"
               icon={<FaStickyNote />}
               count={0}
-              active={false}
+              NavigationPath="/StickyWall"
             />
           </div>
         </div>
@@ -83,42 +80,31 @@ const Menu = () => {
         <div className="my-2">
           <div className="flex flex-col space-y-1 text-xs">
             <h1 className="font-semibold tracking-wide">List</h1>
-            <div className={`overflow-y-auto  ${listHeight && "h-64"}`}>
-              {todolistStore.listData.map((value: Todo_List, index: any) => (
-                <NavigationItem
-                  key={index}
+            <div
+              className={`overflow-y-auto space-y-1 scrollbar-thin scrollbar-webkit  ${
+                listHeight && "h-64"
+              }`}
+            >
+              {list.map((value: Todo_List) => (
+                <TodoMenuNavigationItem
+                  key={value.id}
                   name={value.list_Title}
-                  icon={
-                    <FaSquare
-                      style={{
-                        color: randomColor({
-                          luminosity: "bright",
-                          hue: "blue",
-                          format: "hex", // e.g. 'rgb(225,200,20)'
-                        }),
-                      }}
-                    />
-                  }
-                  count={0}
-                  active={false}
+                  count={null}
+                  icon={ <FaSquare className="text-sky-400" /> }
+                  NavigationPath={`/List/${value.id}`}
                 />
               ))}
             </div>
-            <AddList />
+            <AddToList />
           </div>
         </div>
       </div>
       <div className="text-xs">
-        <NavigationItem
-          name="Settings"
-          icon={<FaListCheck />}
-          count={0}
-          active={false}
-        />
+        {/* <NavigationItem name="Settings" icon={<FaListCheck />} active={false} /> */}
       </div>
       {/* settings */}
     </div>
   );
 };
 
-export default observer(Menu);
+export default Menu;
