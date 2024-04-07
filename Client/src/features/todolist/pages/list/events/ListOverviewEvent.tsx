@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useStore } from "../../../../../app/stores/Store";
-import { useParams } from "react-router-dom";
+import { redirect, useParams } from "react-router-dom";
 
 export default function ListOverviewEvent() {
   const { todolistStore } = useStore();

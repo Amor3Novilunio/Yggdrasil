@@ -2,16 +2,12 @@ import { Outlet } from "react-router-dom";
 import Menu from "./menu/TodoMenu";
 import "./Todolist.css";
 import TodolistEvents from "./events/TodolistEvents";
-import { useEffect } from "react";
 import { observer } from "mobx-react-lite";
 
 const Todolist = () => {
   // GetList
   const { getList, listStore } = TodolistEvents();
-  // Re-render when List is Active
-  useEffect(() => {
-    getList();
-  }, [listStore]);
+
   return (
     <section className="font-raleway">
       <div className="flex space-x-5">
