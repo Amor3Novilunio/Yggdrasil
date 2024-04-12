@@ -6,7 +6,7 @@ import { observer } from "mobx-react-lite";
 
 const Todolist = () => {
   // GetList
-  const { getList, listStore } = TodolistEvents();
+  const { listStore } = TodolistEvents();
 
   return (
     <section className="font-raleway">

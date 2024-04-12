@@ -13,10 +13,8 @@ const AddNewTask = ({ onClickCloseBtn }: Props) => {
     taskStore,
     dueDate,
     onChangeCalendarHandler,
-    taskNameInputHandler,
-    taskName,
-    taskDescriptionInputHandler,
-    taskDescription,
+    formInputs,
+    FormInputHandler,
     deleteTask,
     clearInputFields,
     SaveTask,
@@ -42,16 +40,16 @@ const AddNewTask = ({ onClickCloseBtn }: Props) => {
               className="shadow-inner p-2 w-full rounded bg-slate-50 "
               type="text"
               name="name"
-              value={taskName}
-              onChange={taskNameInputHandler}
+              value={formInputs.name}
+              onChange={FormInputHandler}
               placeholder="Task Name"
             />
             <textarea
               className="shadow-inner p-2  w-full rounded bg-slate-50"
               name="description"
-              value={taskDescription}
+              value={formInputs.description}
               placeholder="Task Description"
-              onChange={taskDescriptionInputHandler}
+              onChange={FormInputHandler}
               rows={6}
             />
             <hr className="my-1" />
@@ -85,7 +83,8 @@ const AddNewTask = ({ onClickCloseBtn }: Props) => {
                   onClickCloseBtn();
                   updateTask();
                 }}
-              > Update Task
+              >
+                Update Task
               </button>
             </>
           ) : (

@@ -2,12 +2,16 @@ import { useEffect, useState } from "react";
 import { useStore } from "../../../../../../app/stores/Store";
 import { Todo_Task } from "../../../../../../app/models/Todolist_Task";
 import { useParams } from "react-router-dom";
+import { IAddNewTask } from "../interface/Forms";
 
 export default function AddNewTaskEvent() {
   const { todolistStore } = useStore();
   const taskStore = todolistStore.task;
-  const [taskName, setTaskName] = useState("");
-  const [taskDescription, setTaskDescription] = useState("");
+  const [formInputs, setFormInputs] = useState<IAddNewTask>({
+    name: "",
+    description: "",
+  });
+  // TBRemove
   const [dueDate, setDueDate] = useState<Date>(new Date());
   const { id } = useParams();
 
@@ -15,10 +19,12 @@ export default function AddNewTaskEvent() {
     setDueDate(val);
   };
 
-  const taskNameInputHandler = (e: any) => setTaskName(e.target.value);
-
-  const taskDescriptionInputHandler = (e: any) =>
-    setTaskDescription(e.target.value);
+  const FormInputHandler = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormInputs({ ...formInputs, [name]: value });
+  };
 
   const deleteTask = () => {
     taskStore.taskItem?.id &&
@@ -28,8 +34,7 @@ export default function AddNewTaskEvent() {
   };
 
   const clearInputFields = () => {
-    setTaskDescription("");
-    setTaskName("");
+    setFormInputs({ name: "", description: "" });
     setDueDate(new Date());
     taskStore.clearTaskItem();
   };
@@ -37,11 +42,11 @@ export default function AddNewTaskEvent() {
   // Save Task and Clear Empty
   const SaveTask = () => {
     let listId = id;
-    if (listId && taskName) {
+    if (listId) {
       let Entry: Todo_Task = {
         list_ID: listId,
-        task_Name: taskName,
-        task_Description: taskDescription,
+        task_Name: formInputs.name,
+        task_Description: formInputs.description,
         due_Date: new Date(dueDate).toISOString().split("T")[0],
       };
       taskStore.createRequestTask(Entry).then(() => clearInputFields());
@@ -50,12 +55,12 @@ export default function AddNewTaskEvent() {
 
   const updateTask = () => {
     let listId = id;
-    if (listId && taskName) {
+    if (listId) {
       let Entry: Todo_Task = {
         id: taskStore.taskItem?.id,
         list_ID: listId,
-        task_Name: taskName,
-        task_Description: taskDescription,
+        task_Name: formInputs.name,
+        task_Description: formInputs.description,
         due_Date: new Date(dueDate).toISOString().split("T")[0],
       };
       taskStore.updateRequestTask(Entry).then(() => clearInputFields());
@@ -65,8 +70,10 @@ export default function AddNewTaskEvent() {
   // if taskItem is not Empty Update Data
   useEffect(() => {
     if (taskStore.taskItem) {
-      setTaskDescription(taskStore.taskItem.task_Description ?? "");
-      setTaskName(taskStore.taskItem.task_Name);
+      setFormInputs({
+        name:taskStore.taskItem.task_Name,
+        description:taskStore.taskItem.task_Description ?? ""
+      })
       setDueDate(new Date(taskStore.taskItem.due_Date));
     }
   }, [taskStore.taskItem]);
@@ -76,10 +83,8 @@ export default function AddNewTaskEvent() {
     dueDate,
     setDueDate,
     onChangeCalendarHandler,
-    taskName,
-    taskDescription,
-    taskNameInputHandler,
-    taskDescriptionInputHandler,
+    formInputs,
+    FormInputHandler,
     deleteTask,
     clearInputFields,
     SaveTask,
